@@ -1,0 +1,18 @@
+@import "../../sass/index.scss";
+
+.lineChart {
+    position: relative;
+    border-radius: .5rem;
+    background-color: $color-red;
+
+    &_tooltip {
+        padding: 1rem;
+        background-color: #fff;
+    }
+
+    &_overlay{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+}

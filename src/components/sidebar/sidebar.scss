@@ -1,0 +1,80 @@
+@import "../../sass/index.scss";
+
+.sidebar {
+  position: fixed;
+  top: 100px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  background-color: $color-dark;
+  justify-content: space-between;
+  color: $color-light;
+  width: 100px;
+  min-height: calc(100vh - 100px);
+  padding: 20px;
+
+  @media screen and (max-width: 1500px) {
+    flex-direction: row;
+    min-height: auto;
+    z-index: 1000;
+    height: 100px;
+    width: 100%;
+    bottom: 0;
+    top: unset;
+  }
+
+  @media screen and (max-width: 675px) {
+    gap: 2rem;
+    text-align: center;
+    height: auto;
+    flex-direction: column-reverse;
+  }
+
+  &_nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (max-width: 1500px) {
+      flex: unset;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      @media screen and (max-width: 1500px) {
+        flex-direction: row;
+      }
+
+      li {
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: $color-light;
+          padding: 10px;
+          border-radius: 5px;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &_footer {
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+    font-size: clamp(1.4rem, 1.6vw, 1.6rem);
+    transform: rotate(-180deg);
+    writing-mode: vertical-rl;
+
+    @media screen and (max-width: 1500px) {
+      writing-mode: horizontal-tb;
+      transform: rotate(0deg);
+    }
+  }
+}

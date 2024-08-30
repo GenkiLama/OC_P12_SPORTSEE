@@ -1,0 +1,34 @@
+@import "../../sass/index.scss";
+
+.barChartWrapper {
+	position: relative;
+	height: 60%;
+	width: 100%;
+	border-radius: .5rem;
+	background-color: $color-light-grey;
+
+	@media screen and (max-width: 1100px) {
+		height: 400px;
+	}
+
+	&_title {
+		position: absolute;
+		top: 2rem;
+		left: 2rem;
+		font-size: 1.5rem;
+		font-weight: 600;
+	}
+
+	&_tooltip{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		padding: 1rem;
+		height: 10rem;
+		font-weight: 500;
+		font-size: 1rem;
+		background-color: $color-red;
+		color: $color-light;
+	}
+}

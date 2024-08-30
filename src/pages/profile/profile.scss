@@ -1,0 +1,78 @@
+@import "../../sass/index.scss"; // Import global styles
+
+.profile {
+  display: flex;
+  width: 100%; // Full width of the container
+  flex-direction: column; // Arrange children in a column
+  gap: 6rem; // Large gap between children
+
+  @include md {
+    gap: 2rem; // Smaller gap on medium screens
+  }
+
+  &_title {
+    display: flex;
+    gap: 2rem; // Gap between title elements
+    flex-direction: column; // Arrange title elements in a column
+
+    h1 {
+      font-size: clamp(2.2rem, 4vw, 4.7rem); // Responsive font size for h1
+
+      span {
+        color: $color-red; // Red color for span inside h1
+      }
+    }
+
+    p {
+      font-size: clamp(1.6rem, 1.8vw, 1.8rem); // Responsive font size for paragraph
+    }
+  }
+
+  &_main {
+    display: flex;
+    max-height: 900px; // Maximum height of 900px
+    height: 80vh; // Set height to 80% of viewport height
+    gap: 2rem; // Gap between main sections
+
+    @include md {
+      flex-direction: column-reverse; // Stack sections in reverse order on medium screens
+      height: auto; // Auto height on medium screens
+      max-height: unset; // Remove max-height on medium screens
+    }
+
+    &--charts {
+      gap: 2rem; // Gap between charts
+      display: flex;
+      width: 80%; // 80% width for charts section
+      flex-direction: column; // Arrange charts in a column
+
+      @include md {
+        width: 100%; // Full width on medium screens
+      }
+
+      &--horizontal {
+        gap: 2rem; // Gap between horizontal charts
+        display: flex;
+        width: 100%; // Full width for horizontal charts
+        height: 40%; // Set height to 40% of parent
+
+        @include md {
+          flex-direction: column; // Stack charts in a column on medium screens
+        }
+      }
+    }
+
+    &--cards {
+      flex-direction: column; // Arrange cards in a column
+      display: flex;
+      justify-content: space-between; // Space between cards
+
+      @include md {
+        flex-direction: row; // Arrange cards in a row on medium screens
+        gap: 2rem; // Gap between cards on medium screens
+        flex-wrap: wrap; // Wrap cards on medium screens
+        width: 100%; // Full width on medium screens
+      }
+    }
+  }
+}
